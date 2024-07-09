@@ -7,11 +7,13 @@ const browserSync = require("browser-sync").create();
 const header = require('gulp-header');
 
 // path
+const path = require('path');
+const rootPath = path.resolve(__dirname);
 const charset = '@charset "utf-8";\n\n';
 const pathSrc = {
-  root: "./app/src",
-  scss: "./app/src/assets/scss",
-  css: "./app/src/assets/css",
+  root: "./html/guide",
+  scss: "./resources/scss",
+  css: "./build/css",
 };
 
 // 배포 폴더 삭제
