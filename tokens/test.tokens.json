@@ -1,0 +1,70 @@
+{
+  "base": {
+    "light": {
+      "color": {
+        "primary": {
+          "5": {
+            "type": "color",
+            "value": "#1f0f01ff",
+            "blendMode": "normal"
+          },
+          "10": {
+            "type": "color",
+            "value": "#371b04ff",
+            "blendMode": "normal"
+          },
+          "20": {
+            "type": "color",
+            "value": "#522907ff",
+            "blendMode": "normal"
+          }
+        }
+      }
+    },
+    "dark": {
+      "color": {
+        "primary": {
+          "5": {
+            "type": "color",
+            "value": "#1f0f01ff",
+            "blendMode": "normal"
+          },
+          "10": {
+            "type": "color",
+            "value": "#371b04ff",
+            "blendMode": "normal"
+          },
+          "20": {
+            "type": "color",
+            "value": "#522907ff",
+            "blendMode": "normal"
+          }
+        }
+      }
+    }
+  },
+  "test": {
+    "light2": {
+      "color": {
+        "primary": {
+          "5": {
+            "type": "color",
+            "value": "#1f0f01ff",
+            "blendMode": "normal"
+          }
+        }
+      }
+    },
+    "dark2": {
+      "color": {
+        "primary": {
+          "5": {
+            "type": "color",
+            "value": "#1f0f01ff",
+            "blendMode": "normal"
+          }
+        }
+      }
+    }
+  }
+}

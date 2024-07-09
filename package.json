@@ -1,0 +1,19 @@
+{
+  "name": "egov-test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rm -rf build",
+    "token-default": "style-dictionary build --config ./transform/config.json",
+    "token-custom": "style-dictionary build --config ./transform/transform-scss.js",
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "del": "^7.1.0",
+    "gulp": "^5.0.0",
+    "gulp-dart-sass": "^1.1.0",
+    "gulp-header": "^2.0.9",
+    "style-dictionary": "^3.9.2"
+  }
+}

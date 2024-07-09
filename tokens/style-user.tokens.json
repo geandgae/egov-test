@@ -1,0 +1,102 @@
+{
+  "btns": {
+    "color": {
+      "button": {
+        "primary": {
+          "type": "color",
+          "value": "#f58220ff"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "#282829ff"
+        },
+        "tertiary": {
+          "type": "color",
+          "value": "#0a0a0aff"
+        },
+        "stock-blue": {
+          "type": "color",
+          "value": "#4789e5ff"
+        },
+        "stock-red": {
+          "type": "color",
+          "value": "#e05c60ff"
+        },
+        "stock-cancel": {
+          "type": "color",
+          "value": "#983ff1ff"
+        },
+        "stock-correction": {
+          "type": "color",
+          "value": "#54803fff"
+        },
+        "disable": {
+          "type": "color",
+          "value": "#2d2d2eff"
+        },
+        "gray": {
+          "type": "color",
+          "value": "#636566ff"
+        },
+        "stock": {
+          "type": "color",
+          "value": "#c75255ff"
+        },
+        "interaction": {
+          "type": "color",
+          "value": "#4880eeff"
+        },
+        "chart": {
+          "type": "color",
+          "value": "#043b72ff"
+        }
+      }
+    }
+  },
+  "icon-back": {
+    "color": {
+      "icons": {
+        "primary": {
+          "type": "color",
+          "value": "#f58220ff"
+        },
+        "stock-blue": {
+          "type": "color",
+          "value": "#4789e5ff"
+        },
+        "stock-red": {
+          "type": "color",
+          "value": "#e05c60ff"
+        },
+        "stock-cancel": {
+          "type": "color",
+          "value": "#983ff1ff"
+        },
+        "stock-correction": {
+          "type": "color",
+          "value": "#54803fff"
+        },
+        "disable": {
+          "type": "color",
+          "value": "#2d2d2eff"
+        },
+        "gray": {
+          "type": "color",
+          "value": "#636566ff"
+        },
+        "stock": {
+          "type": "color",
+          "value": "#c75255ff"
+        },
+        "interaction": {
+          "type": "color",
+          "value": "#4880eeff"
+        },
+        "chart": {
+          "type": "color",
+          "value": "#043b72ff"
+        }
+      }
+    }
+  }
+}

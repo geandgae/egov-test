@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../../../resources/img/guide/favicon_180.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="../../../resources/img/guide/favicon_512.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../../../resources/img/guide/favicon_192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../resources/img/guide/favicon_32.png">
+	<title>개요 | 서비스 패턴 - 로그인 - KRDS</title>
+	<link href="../../../resources/css/guide_css.css" type="text/css" rel="stylesheet" />
+	<link href="../../../resources/css/guide/prism.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="g-wrap">
+		<!-- 상단 배너영역  -->
+		<div id="g-header-top" class="includeJsGuide" data-include-file="../layout/header-top.html"></div>
+		<!-- //상단 배너영역  -->
+		
+		<!-- 헤더 영역 -->
+		<header id="g-header" class="includeJsGuide" data-include-file="../layout/guide_header.html"></header>
+		<!-- //헤더 영역 -->
+
+		<!-- 컨테이너 영역 -->
+		<div id="g-container">
+			<!-- 왼쪽메뉴 영역 -->
+			<div class="g-aside includeJsGuide" data-include-file="../layout/guide_aside.html"></div>
+			<!-- //왼쪽메뉴 영역 -->
+
+			<!-- 컨텐츠 영역 -->
+			<div class="g-content">
+				<!-- 제목 -->
+				<div class="g-title-area">
+					<h2 class="g-heading-l"><span>서비스 패턴 <em>로그인</em></span><strong>개요</strong></h2>
+					<p class="g-desc">
+						로그인은 사용자의 신원을 확인하는 과정으로 사용자가 서비스에 접근할
+						수 있도록 하는 수단이다. 사용자에게 개인화된 경험을 제공하거나
+						사용자의 신분/신원을 인증하고자 하는 경우에 사용하기 적합하다.
+					</p>
+				</div>
+				<!-- //제목 -->
+				
+				<!-- 설명 -->
+				<div class="g-description-area">
+					
+					<div class="g-conts-area">
+						<h3 class="g-heading-m">유형</h3>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">지식 기반 인증</h4>
+							<p class="info-txt">
+								사용자만이 유일하게 알고 있는 내용에 기반한 사용자 확인 방법 <br>
+								예) 아이디/패스워드, PIN
+							</p>
+						</div>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">소유 기반 인증</h4>
+							<p class="info-txt">
+								사용자가 보유하고 있는 품목을 활용한 인증 방법 <br>
+								예) 토큰, 공동인증, 간편인증, 문자 인증
+							</p>
+						</div>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">생체 기반 인증</h4>
+							<p class="info-txt">
+								사용자의 생체 정보, 행동에 기반한 인증 방법 <br>
+								예) 지문 인증, 페이스 아이디
+							</p>
+						</div>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">다중 요소 인증</h4>
+							<p class="info-txt">
+								여러 가지 인증 방식을 결합하여 제공하는 인증 방법
+							</p>
+						</div>
+					
+					</div>
+					
+					<div class="g-conts-area">
+						<h3 class="g-heading-m">이용 상황별 플로(Flow)</h3>
+						<div class="g-img-wrap flow">
+							<div><img src="../../../resources/img/guide/contents/service/service_03_01_01.png" alt=""></div>
+						</div>
+						<ol class="flow-list">
+							<li>
+								<h4 class="g-heading-s">1) 로그인 방식 확인 및 선택</h4>
+								<ul class="info-list decimal">
+									<li>
+										<strong>로그인 방식 탐색</strong>
+										<p class="info-txt">2개 이상의 로그인 방식에
+											대해 비교하고 선택하는 과정</p>
+									</li>
+									<li>
+										<strong>도움말 확인</strong>
+										<p class="info-txt">로그인 방식, 방법에 대한
+											안내를 확인하는 과정</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h4 class="g-heading-s">2) 로그인 정보 입력</h4>
+								<ul class="info-list decimal">
+									<li>
+										<strong>정보 입력</strong>
+										<p class="info-txt">인증 방식에 따라 정보를
+											입력하는 과정</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h4 class="g-heading-s">3) 로그인 완료</h4>
+								<ul class="info-list decimal">
+									<li>
+										<strong>완료</strong>
+										<p class="info-txt">로그인이 성공적으로 완료되어
+											화면을 벗어나는 과정</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h4 class="g-heading-s">4) 로그아웃</h4>
+								<ul class="info-list decimal">
+									<li>
+										<strong>로그아웃</strong>
+										<p class="info-txt">인증을 해제하는 과정으로
+											사용자가 자발적으로
+											수행하거나 세션 유지 시간
+											만료로 인해 자동으로 해제될
+											수 있음</p>
+									</li>
+								</ul>
+							</li>
+						</ol>
+						
+					</div>
+					
+					
+				</div>
+				<!-- //설명 -->
+				
+			</div>
+			<!-- //컨텐츠 영역 -->
+		</div>
+		<!-- //컨테이너 영역 -->
+
+		<!-- 푸터 영역 -->
+		<footer id="g-footer" class="includeJsGuide" data-include-file="../layout/guide_footer.html"></footer>
+		<!-- //푸터 영역 -->
+	</div>
+
+	<script src="../../../resources/js/component/ui-script.js"></script>
+	<script src="../../../resources/js/pattern/ui-pattern-script.js"></script>
+	<script src="../../../resources/js/guide/include.js"></script>
+	<script src="../../../resources/js/guide/prism.js"></script>
+</body>
+
+</html>

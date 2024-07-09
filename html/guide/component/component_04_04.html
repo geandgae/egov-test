@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../../../resources/img/guide/favicon_180.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="../../../resources/img/guide/favicon_512.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../../../resources/img/guide/favicon_192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../resources/img/guide/favicon_32.png">
+	<title>디스클로저 (Disclosure) | 컴포넌트 - KRDS</title>
+	<link href="../../../resources/css/guide_css.css" type="text/css" rel="stylesheet" />
+	<link href="../../../resources/css/guide/prism.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="g-wrap">
+		<!-- 상단 배너영역  -->
+		<div id="g-header-top" class="includeJsGuide" data-include-file="../layout/header-top.html"></div>
+		<!-- //상단 배너영역  -->
+		
+		<!-- 헤더 영역 -->
+		<header id="g-header" class="includeJsGuide" data-include-file="../layout/guide_header.html"></header>
+		<!-- //헤더 영역 -->
+
+		<!-- 컨테이너 영역 -->
+		<div id="g-container">
+			<!-- 왼쪽메뉴 영역 -->
+			<div class="g-aside includeJsGuide" data-include-file="../layout/guide_aside.html"></div>
+			<!-- //왼쪽메뉴 영역 -->
+
+			<!-- 컨텐츠 영역 -->
+			<div class="g-content">
+				<!-- 제목 -->
+				<div class="g-title-area">
+					<h2 class="g-heading-l"><span>컴포넌트</span><strong>디스클로저 <span class="sub">(Disclosure)</span></strong></h2>
+					<p class="g-desc">
+						디스클로저는 특정한 정보/컨트롤/섹션에 관련된 부가적인 정보를
+						표시하거나 숨기는 데 사용되는 요소이다. 디스클로저 하위 콘텐츠
+						섹션은 기본으로 축소된 상태로 제공되며 사용자가 요청하는 경우에
+						확장되어 자세한 정보가 표시된다. 이는 사용자의 인지적 부담을
+						감소시키고 정보를 빠르게 훑어보는 데 도움이 된다.
+					</p>
+				</div>
+				<!-- //제목 -->
+
+				<!-- 설명 -->
+				<div class="g-description-area">
+
+					<div class="g-conts-area">
+						<h3 class="g-heading-m">용례</h3>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">사용하기 적합한 경우</h4>
+							<div class="g-conts-wrap">
+								<ul class="info-list decimal">
+									<li>
+										<strong>화면이 여러 개의 콘텐츠 섹션으로 구성된 경우</strong>
+										<p class="info-txt">
+											화면이 단일 섹션으로 구성된 경우 사용자가 여러 섹션을 비교·탐색하는 인지적 부담이 적으므로 부가적인
+											상호작용을 통해 콘텐츠를 표시하는 것보다 기본으로 보여주는 것이 적절하다.
+										</p>
+									</li>
+									<li>
+										<strong>부가적인 정보를 제공하고자 하는 경우</strong>
+										<p class="info-txt">
+											디스클로저는 탭이나 아코디언보다 시각적으로 눈에 덜 띄며 콘텐츠를 표시하기 위한 상호작용이
+											필요하므로 부가적인 정보를 제공하는 데 사용하는 것이 적합하다. <br>
+											예) 부가적인 안내 콘텐츠, 시각적으로 표시되는 이미지 대체 텍스트
+
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">사용하기 적합하지 않은 경우</h4>
+							<div class="g-conts-wrap">
+								<ul class="info-list decimal">
+									<li>
+										<strong>화면이 단일 콘텐츠 섹션으로 구성된 경우</strong>
+										<p class="info-txt">
+											화면이 단일 섹션으로 구성된 경우 부가적인 상호작용을 통해 콘텐츠를 표시하는 것보다 기본으로 정보를
+											보여주는 것이 적절하다.
+										</p>
+									</li>
+									<li>
+										<strong>오류 메시지나 중요한 정보를 전달해야 하는 경우</strong>
+										<p class="info-txt">
+											디스클로저 내부에 정보가 제공되고 있음을 발견하지 못할 수 있으므로 사용자가 명확하게 인지할 수 있는
+											레이아웃을 사용해야 한다.
+										</p>
+									</li>
+									<li>
+										<strong>표의 셀 내부</strong>
+										<p class="info-txt">
+											표의 셀 내부는 콘텐츠를 표시할 수 있는 공간이 충분하지 않으며, 디스클로저로 인해 행의 높이가
+											유동적으로 변경되었을 경우 정보를 인지하기 어렵다.
+
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="g-conts-area">
+						<h3 class="g-heading-m">구조</h3>
+						<div class="g-conts-area">
+							<div class="g-img-wrap">
+								<div><img src="../../../resources/img/guide/contents/component/component_04_04_01.png"
+										alt=""></div>
+							</div>
+							<ol class="info-list ordered fraction">
+								<li><span class="num">1. </span><strong>꺾쇠 아이콘: </strong>콘텐츠 섹션의 확장/축소 상태를 나타냄
+
+								</li>
+								<li><span class="num">2. </span><strong>텍스트: </strong>확장할 콘텐츠 섹션의 내용을 유추할 수 있는 제목 텍스트
+
+								</li>
+								<li><span class="num">3. </span><strong>컨테이너: </strong>정보가 제공되는 콘텐츠 섹션으로 꺾쇠 아이콘이나 텍스트를
+									눌러 표시하거나 숨길 수
+									있음
+								</li>
+							</ol>
+						</div>
+					</div>
+
+					<div class="g-conts-area">
+						<h3 class="g-heading-m">사용성 가이드라인</h3>
+						<div class="g-conts-area">
+							<ul class="info-list decimal">
+								<li>
+									<strong>기본적으로 축소된 상태로 제공한다.</strong>
+									<p class="info-txt">
+										디스클로저는 화면 내 정보를 훑어보는 과정에서 사용자의 인지적 부담을 덜어주기 위한 용도로
+										사용되므로 화면이 로딩되었을 때 펼쳐진 상태로 제공하는 것은 적절하지 않다.
+									</p>
+								</li>
+								<li>
+									<strong>디스클로저를 통해 제공하고자 하는 부가 정보와 관련된
+										정보/컨트롤/섹션 아래에 배치한다.</strong>
+									<p class="info-txt">
+										사용자가 관련 정보와 디스클로저 컨트롤 및 섹션 간 관계를 인지할 수 있도록 부가적인 정보를
+										제공하고자 하는 요소 아래에 배치한다.
+									</p>
+								</li>
+								<li>
+									<strong>가능한 한 하나의 섹션에 하나의 디스클로저만 사용한다.</strong>
+									<p class="info-txt">
+										여러 개의 디스클로저를 연속적으로 배치하게 되면 복잡성이 증가되어 오히려 사용자에게 혼동을 줄 수
+										있다.
+									</p>
+									<div class="g-img-wrap">
+										<p class="caption">[모범 사례]</p>
+										<div><img
+												src="../../../resources/img/guide/contents/component/component_04_04_02.png"
+												alt=""></div>
+									</div>
+									<div class="g-img-wrap">
+										<p class="caption">[피해야 할 사례]</p>
+										<div><img
+												src="../../../resources/img/guide/contents/component/component_04_04_02_02.png"
+												alt=""></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-conts-area">
+						<h3 class="g-heading-m">접근성 가이드라인</h3>
+						<div class="g-conts-area">
+							<ul class="info-list decimal">
+								<li>
+									<strong>디스클로저를 버튼 역할로 제공한다.</strong>
+									<p class="info-txt">
+										디스클로저를 실행하였을 때 특정 섹션이나 화면으로 이동하는 것이 아니므로 &lt;button&gt;을 사용하거나
+										role=”button”을 사용하여 스크린 리더에서 버튼 역할임을 인지할 수 있도록 한다.
+									</p>
+									<ul class="info-list dash">
+										<li>WCAG 2.1 Name, Role, Value (A)</li>
+									</ul>
+								</li>
+								<li>
+									<strong>스크린 리더에서 확장/축소 상태 정보를 확인할 수 있도록
+										한다.</strong>
+									<p class="info-txt">
+										aria-expanded 속성이나 title 속성을 활용하여 디스클로저 섹션의 활성화 상태 정보가 스크린 리더에
+										탐지될 수 있도록 해야 한다.
+									</p>
+									<ul class="info-list dash">
+										<li>WCAG 2.1 Name, Role, Value (A)</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-conts-area">
+						<h3 class="g-heading-m">상호작용 가이드라인</h3>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">디스클로저 탐색</h4>
+							<!-- table list -->
+							<div class="tbl-wrap">
+								<table class="tbl col data">
+									<caption>상호작용 가이드라인 디스클로저 탐색에 대한 표로 구분/설명으로 구성되어있으며 구분 항목은 Tab, Shift + Tab 로 구성되어있음
+									</caption>
+									<colgroup>
+										<col style="width: 15%">
+										<col>
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">구분</th>
+											<th scope="col">설명</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">Tab, Shift + Tab</th>
+											<td>
+												디스클로저 컨트롤에 초점이 진입하고 포커스링이 표시된다.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //table list -->
+						</div>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">디스클로저 확장 및 축소</h4>
+							<!-- table list -->
+							<div class="tbl-wrap">
+								<table class="tbl col data">
+									<caption>상호작용 가이드라인 디스클로저 확장 및 축소에 대한 표로 이동에 대한 표로 구분/설명으로 구성되어있으며 구분 항목은 Click,
+										Enter, Space 로 구성되어있음</caption>
+									<colgroup>
+										<col style="width: 15%">
+										<col>
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">구분</th>
+											<th scope="col">설명</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">Click</th>
+											<td>
+												디스클로저를 Click 하여 펼치거나 접는다
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">Enter, Space</th>
+											<td>
+												디스클로저 컨트롤이 초점을 가진 상태에서 Enter 또는 Space 키를 눌러 디스클로저를 펼치거나 접을 수
+												있다
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //table list -->
+						</div>
+
+					</div>
+
+				</div>
+				<!-- //설명 -->
+
+				<!-- 예시 -->
+				<div class="g-example-area">
+					<div class="g-conts-area">
+						<h3 class="g-heading-m">마크업 예시</h3>
+						<div class="g-conts-area">
+							<h4 class="g-heading-s">기본</h4>
+							<div class="g-example-wrap">
+								<div class="g-example ex-full">
+									<!-- disclosure -->
+									<div class="krds-disclosure conts-expand-area">
+										<button type="button" class="btn-conts-expand">신청 서비스안내</button>
+										<div class="expand-wrap">
+											<div class="expand-in">
+												<ul class="list-bullet">
+													<li>하나의 아이디로 안전하고 편리하게 여러 전자정부 서비스를 이용할 수 있는 서비스입니다.</li>
+													<li>디지털원패스 이용문의 : 1533-3713 (평일9~18시, 공휴일제외)</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!-- //disclosure -->
+								</div>
+								<div class="g-code-wrap accordion">
+									<div class="accordion-item">
+										<h2 id="accordionHeader04_04_01" class="accordion-header"><button type="button"
+												class="btn-accordion" aria-controls="accordionCollapse04_04_01">코드
+												확인하기</button></h2>
+										<div id="accordionCollapse04_04_01" class="accordion-collapse collapse"
+											aria-expanded="false" aria-labelledby="accordionHeader04_04_01">
+											<div class="accordion-body">
+												<!-- code -->
+												<div class="g-code-box">
+													<pre data-src="code/component_04_04_01.html"></pre>
+												</div>
+												<!-- //code -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="g-conts-area">
+							<div class="g-cont-in">
+								<div class="tbl-wrap scroll">
+									<table class="tbl col data">
+										<colgroup>
+											<col style="width: 15%;">
+											<col style="width: 20%;">
+											<col>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">1Depth</th>
+												<th scope="col">2Depth</th>
+												<th scope="col">File Link</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="name">서비스 신청</td>
+												<td>바구니</td>
+												<td class="file"><a href="../../pattern/sample_cart_01.html"
+														target="_blank" class="btn sm btn-txt link text-primary">html 화면
+														확인하기</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //예시 -->
+
+			</div>
+			<!-- //컨텐츠 영역 -->
+		</div>
+		<!-- //컨테이너 영역 -->
+
+		<!-- 푸터 영역 -->
+		<footer id="g-footer" class="includeJsGuide" data-include-file="../layout/guide_footer.html"></footer>
+		<!-- //푸터 영역 -->
+	</div>
+
+	<script src="../../../resources/js/component/ui-script.js"></script>
+	<script src="../../../resources/js/pattern/ui-pattern-script.js"></script>
+	
+	<script src="../../../resources/js/guide/include.js"></script>
+	<script src="../../../resources/js/guide/prism.js"></script>
+</body>
+
+</html>

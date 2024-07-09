@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../../../resources/img/guide/favicon_180.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="../../../resources/img/guide/favicon_512.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../../../resources/img/guide/favicon_192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../resources/img/guide/favicon_32.png">
+	<title>정부기관 공식누리집 검색 | 가이드라인 소개 - KRDS</title>
+	<link href="../../../resources/css/guide_css.css" type="text/css" rel="stylesheet" />
+	<link href="../../../resources/css/guide/prism.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="g-wrap">
+		<!-- 상단 배너영역  -->
+		<div id="g-header-top" class="includeJsGuide" data-include-file="../layout/header-top.html"></div>
+		<!-- //상단 배너영역  -->
+		
+		<!-- 헤더 영역 -->
+		<header id="g-header" class="includeJsGuide" data-include-file="../layout/guide_header.html"></header>
+		<!-- //헤더 영역 -->
+
+		<!-- 컨테이너 영역 -->
+		<div id="g-container">
+			<!-- 왼쪽메뉴 영역 -->
+			<div class="g-aside includeJsGuide" data-include-file="../layout/guide_aside.html"></div>
+			<!-- //왼쪽메뉴 영역 -->
+
+			<!-- 컨텐츠 영역 -->
+			<div class="g-content">
+				<!-- 제목 -->
+				<div class="g-title-area">
+					<h2 class="g-heading-l"><span>가이드라인 소개</span><strong>정부기관 공식누리집 검색</strong></h2>
+				</div>
+				<!-- //제목 -->
+				
+				<!-- 설명 -->
+				<div class="g-description-area">
+					<div class="g-conts-area">
+						<h3 class="g-heading-m sub-txt-wrap">
+							<span class="txt-sm">행정안전부에서 운영하는 누리집을 확인하세요</span>
+							공식적으로 신뢰할 수 있는 누리집인지 어떻게 알 수 있나요?
+						</h3>
+						<p class="info-txt">
+							대한민국 정부기관의 공식 누리집의 주소는 대부분 go.kr을 사용하고 있습니다. <br>
+							go.kr을 사용하지 않고 or.kr, kr 등 다양한 URL 주소를 사용하고 있는 경우에는 여기에 있는 누리집 목록의 주소와 비교하여 확인할 수 있습니다.
+						</p>
+						<!-- 참고 -->
+						<div class="helper-box refer pure">
+							<p class="helper-tit">행정안정부 공식누리집 확인 방법</p>
+							<div class="helper-desc-wrap">
+								<div class="nurizip-bn-wrap">
+									<div class="nurizip-bn">
+										<div class="bn-img"><img src="../../../resources/img/guide/contents/outline/img_bn_01.png" alt=""></div>
+										<ul class="info-list decimal">
+											<li>현재 정부에서 운영하는 누리집이 신뢰할 수 있는 누리집이라는 것을 알 수 있도록 메시지를 표시
+												하는 공식 배너를 누리집 최상단에 배치하는 것을 확대하고 있습니다. 이 공식 누리집 배너를 확인해 보세요.</li>
+										</ul>
+									</div>
+									<div class="nurizip-bn">
+										<div class="bn-img"><img src="../../../resources/img/guide/contents/outline/img_bn_02.png" alt=""></div>
+										<ul class="info-list decimal">
+											<li>웹 주소(URL)을 확인하기 위해서는 위 이미지와 같이 브라우저 주소표시줄에서  'go.kr', 'or.kr', 'com'과 같은 필요한 부분까지만 선택하고 '복사하기'를 선택하여 아래 검색 필터에 붙여 넣으세요 (“/ “ 뒤에 다른 기호나 숫자없이 정확히 복사)</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //참고 -->
+						
+						<div class="g-conts-area">
+							<div class="g-conts-area" id="keyword_sch_area">
+								<fieldset>
+									<legend>누리집 검색</legend>
+									<div class="fileset">
+										<div class="form-group">
+											<div class="form-conts keyword-sch">
+												<div class="sch-input">
+													<input type="text" id="website_search" class="form-control" placeholder="키워드를 입력해주세요." title="누리집 검색어 입력">
+													<button type="button" class="btn btn-ico ico-sch btn-exec">
+														<span class="sr-only">검색</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<div class="g-cont-in">
+									<!-- table list -->
+									<div class="tbl-wrap scroll nurizip-list">
+										<table class="tbl col data">
+											<caption>누리집 이름, 운영기관, 도메인주소(URL)으로 구성되어있으며 column1은 row1, row1-2로, column2는 row2, row2-2로 구성되어있음</caption>
+											<colgroup>
+												<col style="width: 23rem;">
+												<col style="width: 23rem;">
+												<col>
+											</colgroup>
+											<thead>
+											<tr>
+												<th scope="col">누리집 이름</th>
+												<th scope="col">운영기관</th>
+												<th scope="col">도메인주소(URL)</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td>행정안정부 대표 누리집</td>
+												<td>행정안전부</td>
+												<td>https://www.mois.go.kr/</td>
+											</tr>
+											<tr>
+												<td>행정안전부 대표 누리집a</td>
+												<td>행정안전부</td>
+												<td>https://www.mois.go.kr/a</td>
+											</tr>
+											<tr>
+												<td>행정안전부 대표 누리집b</td>
+												<td>행정안전부</td>
+												<td>https://www.mois.go.kr/b</td>
+											</tr>
+											<tr>
+												<td>행정안전부 대표 누리집c</td>
+												<td>행정안전부</td>
+												<td>https://www.mois.go.kr/c</td>
+											</tr>
+											<tr>
+												<td>행정안전부 대표 누리집d</td>
+												<td>기획재정부def</td>
+												<td>https://www.mois.go.kr/d</td>
+											</tr>
+											<tr>
+												<td>행정안전부 대표 누리집e</td>
+												<td>행정안전부</td>
+												<td>https://www.mois.go.kr/e</td>
+											</tr>
+											<tr>
+												<td>행정안전부 대표 누리집f</td>
+												<td>행정안전부</td>
+												<td>https://www.mois.go.kr/f</td>
+											</tr>
+											<tr>
+												<td>행정안전부 대표 누리집g</td>
+												<td>행정안전부</td>
+												<td>https://www.mois.go.kr/g</td>
+											</tr>
+											</tbody>
+										</table>
+										<div class="no-data hide">검색결과가 없습니다.</div>
+									</div>
+									<!-- //table list -->
+								</div>
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				<!-- //설명 -->
+				
+			</div>
+			<!-- //컨텐츠 영역 -->
+		</div>
+		<!-- //컨테이너 영역 -->
+
+		<!-- 푸터 영역 -->
+		<footer id="g-footer" class="includeJsGuide" data-include-file="../layout/guide_footer.html"></footer>
+		<!-- //푸터 영역 -->
+	</div>
+
+	<script src="../../../resources/js/component/ui-script.js"></script>
+	<script src="../../../resources/js/pattern/ui-pattern-script.js"></script>
+	<script src="../../../resources/js/guide/include.js"></script>
+	<script src="../../../resources/js/guide/prism.js"></script>
+	
+	<script>
+		const keyFilter = {
+			filter: () => {
+				const keyword = document.getElementById('website_search').value.toLowerCase();
+				const noData = document.querySelector('#keyword_sch_area .no-data');
+				const list = document.querySelectorAll('#keyword_sch_area .tbl tbody > tr');
+				const listLen = list.length;
+				
+				list.forEach(e => {
+					const text = e.getElementsByTagName('td');
+					if (text[0].innerHTML.toLowerCase().indexOf(keyword) != -1 || text[1].innerHTML.toLowerCase().indexOf(keyword) != -1 || text[2].innerHTML.toLowerCase().indexOf(keyword) != -1) {
+						//e.style.display = 'table-row';
+						e.classList.remove('hide');
+					} else {
+						//e.style.display = 'none';
+						e.classList.add('hide');
+					}
+				});
+				setTimeout(() => {
+					const listHide = document.querySelectorAll('#keyword_sch_area .tbl tbody > tr.hide');
+					const listHideLen = listHide.length;
+					//console.log(listLen + '/' + listHideLen);
+					if (listLen == listHideLen) {
+						noData.classList.remove('hide');
+					}
+					else {
+						noData.classList.add('hide');
+					}
+				}, 50);
+				
+			},
+			exec: () => {
+				const btn = document.querySelector('#keyword_sch_area .btn-exec');
+				const input = document.querySelector('#keyword_sch_area .form-control');
+				btn.addEventListener('click', () => {
+					keyFilter.filter();
+				});
+				input.addEventListener('keyup', e => {
+					if (e.key === 'Enter') {
+						keyFilter.filter();
+					}
+				});
+			}
+		}
+		
+		window.addEventListener("DOMContentLoaded", () => {
+			keyFilter.exec();
+		});
+	</script>
+</body>
+
+</html>
