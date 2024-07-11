@@ -59,27 +59,207 @@ transform/ 스타일딕셔너리설정
 
 ### 번들링
 ```bash
-
 * test 버전(현재)의 번들링은 gulp
 
-
 * Rollup
+- 페이스북(react)의 기본 패키지
 - Google material: rollup(https://rollupjs.org/)
 - 프랑스: rollup
 - shopify polaris: rollup
+- focus-trap: rollup
+- Pinterest Gestalt: https://gestalt.pinterest.systems/home
+- 싱가폴 리액트 컴포넌트
+
+* vite
+- Twilio Paste: https://paste.twilio.design/
 
 * Gulp
 - 영국정부 GOV UK: gulp
+- salesforce: gulp
 
 * Bundler
 - 미국정부 USWDS: Bundler v2.2.0(https://bundler.io/)
 
+* parcel
+- atlassian: parcel / webpack
+
+* webpack
+- IBM carbon : carbondesignsystem.com
 
 ```
 
 ---
 
-### focus-trap rollup.config.js
+### test 버전(현재) gulp / gulpfile.js
+```js
+"use strict";
+
+// plug-in
+const gulp = require("gulp");
+const sass = require("gulp-dart-sass");
+const browserSync = require("browser-sync").create();
+const header = require('gulp-header');
+
+// path
+const path = require('path');
+const rootPath = path.resolve(__dirname);
+const charset = '@charset "utf-8";\n\n';
+const pathSrc = {
+  root: "./html/guide",
+  scss: "./resources/scss",
+  css: "./build/css",
+};
+
+// 배포 폴더 삭제
+gulp.task("clean", function () {
+  return import("del").then((del) => {
+    return del.deleteAsync([pathSrc.css]);
+  });
+});
+
+// sass
+gulp.task("sass", function() {
+  return gulp.src(pathSrc.scss + "/*.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(header(charset))
+    .pipe(gulp.dest(pathSrc.css))
+    .pipe(browserSync.stream());
+});
+
+// server
+gulp.task("server", function () {
+  browserSync.init({
+    server: {
+      baseDir: pathSrc.root
+    }
+  });
+  // watch
+  gulp.watch(pathSrc.scss + "/**/*", gulp.series("sass"))
+  gulp.watch(pathSrc.root + "/**/*",).on("change", browserSync.reload);
+});
+
+// gulp start
+gulp.task("default", gulp.series("clean", "sass", "server"));
+// gulp.task("default", gulp.series("clean", gulp.parallel("sass:root", "sass:contents"), "server"));
+```
+
+---
+
+### test 버전(현재) rollup 변환 / rollup.config.js
+```js
+import postcss from 'rollup-plugin-postcss';
+import serve from 'rollup-plugin-serve';
+import livereload from 'rollup-plugin-livereload';
+import path from 'path';
+import del from 'del';
+
+const rootPath = path.resolve(__dirname);
+const charset = '@charset "utf-8";\n\n';
+const pathSrc = {
+  root: "./html/guide",
+  scss: "./resources/scss",
+  css: "./build/css",
+};
+
+// 배포 폴더 삭제
+del.sync([pathSrc.css]);
+
+export default {
+  input: pathSrc.scss + '/styles.scss',
+  output: {
+    file: pathSrc.css + '/styles.css',
+    format: 'es',
+  },
+  plugins: [
+    postcss({
+      extract: true,
+      minimize: false,
+      sourceMap: true,
+      plugins: [
+        require('autoprefixer')
+      ],
+      extensions: ['.scss'],
+      process: (css) => charset + css,
+      use: ['sass'],
+    }),
+    serve({
+      open: true,
+      contentBase: pathSrc.root,
+      port: 3000,
+    }),
+    livereload({
+      watch: pathSrc.css,
+    }),
+  ],
+};
+
+// 명령어
+{
+  "scripts": {
+    "start": "rollup -c --watch"
+  }
+}
+
+```
+
+---
+
+### test 버전(현재) vite 변환 / vite.config.js
+```js
+// vite.config.js
+import { defineConfig } from 'vite';
+import path from 'path';
+
+export default defineConfig({
+  plugins: [],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "${path.resolve(__dirname, './resources/scss')}/variables.scss";`, // SCSS 변수 파일 임포트
+      },
+    },
+  },
+});
+
+```
+
+---
+
+### test 버전(현재) webpack 변환 / webpack.config.js
+```js
+// webpack.config.js
+const path = require('path');
+
+module.exports = {
+  entry: './resources/scss/styles.scss', // 진입점으로 사용할 SCSS 파일 경로
+  output: {
+    path: path.resolve(__dirname, 'build/css'), // 출력 경로
+    filename: 'bundle.js', // 출력 파일 이름 (여기서는 필요 없지만 Webpack의 요구사항)
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/, // .scss 확장자를 가진 모든 파일에 대해
+        use: [
+          'style-loader', // HTML에 <style> 태그로 스타일을 삽입
+          'css-loader', // CSS를 CommonJS로 변환
+          'sass-loader' // SCSS를 CSS로 컴파일
+        ],
+      },
+    ],
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'html/guide'), // 개발 서버의 기본 경로
+    watchContentBase: true, // 파일 변경 감지 여부
+    port: 8080, // 개발 서버 포트 번호
+    open: true, // 브라우저 자동 열기
+  },
+};
+```
+
+---
+
+### focus-trap 사이트 예 / rollup.config.js
 ```js
 /* eslint-disable no-console */
 /* eslint-env node */
