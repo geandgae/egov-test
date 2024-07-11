@@ -227,7 +227,7 @@ module.exports = {
   platforms: {
     scss: {
       transformGroup: "scss",
-      buildPath: "./build/",
+      buildPath: "./test/",
       files: [
         {
           destination: "_variables.scss",
