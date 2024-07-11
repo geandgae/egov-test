@@ -1,8 +1,8 @@
 // rollup.config.js
 import path from 'path';
 import sass from 'rollup-plugin-sass';
-import serve from 'rollup-plugin-serve';
-import livereload from 'rollup-plugin-livereload';
+// import serve from 'rollup-plugin-serve';
+// import livereload from 'rollup-plugin-livereload';
 
 const pathSrc = {
   root: "./html/guide",
@@ -11,7 +11,7 @@ const pathSrc = {
 };
 
 export default {
-  input: pathSrc.scss + '/styles.scss',
+  input: pathSrc.scss + '/default.scss',
   output: {
     file: pathSrc.css + '/bundle.js',
     format: 'iife',
@@ -23,13 +23,13 @@ export default {
         includePaths: [path.resolve(path.dirname(''), pathSrc.scss)],
       },
     }),
-    serve({
-      open: true,
-      contentBase: pathSrc.root,
-      port: 8080,
-    }),
-    livereload({
-      watch: pathSrc.root,
-    }),
+    // serve({
+    //   open: true,
+    //   contentBase: pathSrc.root,
+    //   port: 8080,
+    // }),
+    // livereload({
+    //   watch: pathSrc.root,
+    // }),
   ],
 };
