@@ -14,7 +14,7 @@ const pathSrc = {
   css: "./resources/css/output",
 };
 
-// 배포 폴더 삭제
+// clean
 gulp.task("clean", function () {
   return import("del").then((del) => {
     return del.deleteAsync([pathSrc.css]);
@@ -40,8 +40,8 @@ gulp.task("server", function () {
     }
   });
   // watch
-  gulp.watch(pathSrc.scss + "/**/*", gulp.series("sass"))
-  gulp.watch(pathSrc.root + "/**/*",).on("change", browserSync.reload);
+  gulp.watch(pathSrc.scss, gulp.series("sass"))
+  gulp.watch(pathSrc.root + "/**/*").on("change", browserSync.reload);
 });
 
 // gulp start
