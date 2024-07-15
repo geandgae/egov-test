@@ -6,19 +6,15 @@
     "clean": "rm -rf build",
     "token-default": "style-dictionary build --config ./transform/config.json",
     "token-custom": "style-dictionary build --config ./transform/transform-scss.js",
-    "start": "gulp",
-    "rollup": "rollup -c rollup.config.mjs -w"
+    "start": "gulp"
   },
   "devDependencies": {
     "browser-sync": "^3.0.2",
     "del": "^7.1.0",
     "gulp": "^5.0.0",
     "gulp-dart-sass": "^1.1.0",
+    "gulp-flatten": "^0.4.0",
     "gulp-header": "^2.0.9",
-    "rollup": "^4.18.1",
-    "rollup-plugin-livereload": "^2.0.5",
-    "rollup-plugin-sass": "^1.13.1",
-    "rollup-plugin-serve": "^1.1.1",
     "style-dictionary": "^3.9.2"
   }
 }

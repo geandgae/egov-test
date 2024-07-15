@@ -5,15 +5,14 @@ const gulp = require("gulp");
 const sass = require("gulp-dart-sass");
 const browserSync = require("browser-sync").create();
 const header = require('gulp-header');
+const flatten = require('gulp-flatten');
 
 // path
-const path = require('path');
-const rootPath = path.resolve(__dirname);
 const charset = '@charset "utf-8";\n\n';
 const pathSrc = {
-  root: "./html/guide",
-  scss: "./resources/scss",
-  css: "./build/css",
+  root: "./",
+  scss: "./resources/scss/**/*.scss",
+  css: "./build/css/output",
 };
 
 // 배포 폴더 삭제
@@ -25,9 +24,10 @@ gulp.task("clean", function () {
 
 // sass
 gulp.task("sass", function() {
-  return gulp.src(pathSrc.scss + "/*.scss")
+  return gulp.src(pathSrc.scss)
     .pipe(sass().on("error", sass.logError))
     .pipe(header(charset))
+    .pipe(flatten())
     .pipe(gulp.dest(pathSrc.css))
     .pipe(browserSync.stream());
 });
@@ -46,4 +46,3 @@ gulp.task("server", function () {
 
 // gulp start
 gulp.task("default", gulp.series("clean", "sass", "server"));
-// gulp.task("default", gulp.series("clean", gulp.parallel("sass:root", "sass:contents"), "server"));
