@@ -1,6 +1,6 @@
 {
-  "name": "egov-test",
-  "version": "1.0.0",
+  "name": "ge-test-npm-publish2",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "test": "jest",
