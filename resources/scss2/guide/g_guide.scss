@@ -377,31 +377,6 @@ body {
 			}
 		}
 	}
-	&.err { //에러 페이지
-		justify-content: center;
-		min-height: 100%;
-		#g-container {
-			.heading-error {
-				position: relative;
-				margin-bottom: var(--#{$prefix}spacer-10);
-				padding-top: 26.4rem;
-				font-size: var(--#{$prefix}fz-heading-sm);
-				text-align: center;
-				&::before {
-					@include position($t: 0, $l: 50%);
-					@include pseudo();
-					@include foursquare(20rem);
-					background: url(../../../resources/img/guide/contents/main/ico_error.svg) no-repeat center;
-					background-size: contain;
-					transform: translateX(-50%);
-				}
-			}
-			.info-txt {
-				color: var(--#{$prefix}gray-90);
-				font-size: var(--#{$prefix}fz-body-lg);
-			}
-		}
-	}
 }
 #g-header-top {
 	position: relative;
@@ -817,10 +792,11 @@ body {
 	&.advice {
 		background-color: #FAEDEB;
 		.helper-tit {
-			color: var(--#{$prefix}gray-90);
 			&::before {
 				display: none;
 			}
+
+			color: var(--#{$prefix}gray-90);
 		}
 	}
 }

@@ -389,10 +389,10 @@
                 }
             }
             .main-tit-wrap {
-                gap: var(--#{$prefix}spacer-4);
                 .tit {
                     font-size: var(--#{$prefix}fz-title-md);
                 }
+                gap: var(--#{$prefix}spacer-4);
             }
             #main-vb-links {
                 @include flex-layout($fd: column, $ai: normal);

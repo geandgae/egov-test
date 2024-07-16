@@ -380,6 +380,32 @@ body {
 #g-wrap.main #g-container .g-content {
   padding: 0;
 }
+#g-wrap.err {
+  justify-content: center;
+  min-height: 100%;
+}
+#g-wrap.err #g-container .heading-error {
+  position: relative;
+  margin-bottom: var(--krds-spacer-10);
+  padding-top: 26.4rem;
+  font-size: var(--krds-fz-heading-sm);
+  text-align: center;
+}
+#g-wrap.err #g-container .heading-error::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  content: "";
+  width: 20rem;
+  height: 20rem;
+  background: url(../../../resources/img/guide/contents/main/ico_error.svg) no-repeat center;
+  background-size: contain;
+  transform: translateX(-50%);
+}
+#g-wrap.err #g-container .info-txt {
+  color: var(--krds-gray-90);
+  font-size: var(--krds-fz-body-lg);
+}
 
 #g-header-top {
   position: relative;
