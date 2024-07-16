@@ -53,6 +53,22 @@ resources/
 tokens/ 피그마토큰
 transform/ 스타일딕셔너리설정
 
+*npm publish
+dist/
+├── css/
+├── js/
+
+src/
+├── js/
+│   ├── component/
+├── scss/
+│   ├── component/
+│   │   ├── components/
+│   │   ├── forms/
+│   │   ├── mixins/
+│   ├── guide/
+│   ├── pattern/
+
 ```
 
 ---

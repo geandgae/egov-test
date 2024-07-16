@@ -37,7 +37,8 @@ gulp.task("server", function () {
   browserSync.init({
     server: {
       baseDir: pathSrc.root
-    }
+    },
+    startPath: './html/guide/index.html'
   });
   // watch
   gulp.watch(pathSrc.scss, gulp.series("sass"))
