@@ -12,12 +12,19 @@ const pathSrc = {
   root: "./",
   scss: "./resources/scss/**/*.scss",
   css: "./resources/css/output",
+  dist: "./dist/css",
+  js: "./resources/js/component/*.js"
 };
+const pathDist = {
+  css: "./dist/css",
+  js: "./dist/js",
+};
+
 
 // clean
 gulp.task("clean", function () {
   return import("del").then((del) => {
-    return del.deleteAsync([pathSrc.css]);
+    return del.deleteAsync([pathSrc.css, pathDist.css, pathDist.js]);
   });
 });
 
@@ -28,7 +35,15 @@ gulp.task("sass", function() {
     .pipe(sass().on("error", sass.logError))
     .pipe(sourcemaps.write('./')) // sourcemaps
     .pipe(flatten()) // flatten
-    .pipe(gulp.dest(pathSrc.css))
+    .pipe(gulp.dest(pathSrc.css)) // 가이드경로
+    .pipe(gulp.dest(pathSrc.dist)) // 배포경로
+    .pipe(browserSync.stream());
+});
+
+// JavaScript
+gulp.task("scripts", function () {
+  return gulp.src(pathSrc.js)
+    .pipe(gulp.dest(pathDist.js))
     .pipe(browserSync.stream());
 });
 
@@ -42,8 +57,9 @@ gulp.task("server", function () {
   });
   // watch
   gulp.watch(pathSrc.scss, gulp.series("sass"))
+  gulp.watch(pathSrc.js, gulp.series("scripts"))
   gulp.watch(pathSrc.root + "/**/*").on("change", browserSync.reload);
 });
 
 // gulp start
-gulp.task("default", gulp.series("clean", "sass", "server"));
+gulp.task("default", gulp.series("clean", "sass", "scripts", "server"));
