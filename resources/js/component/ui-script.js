@@ -15,42 +15,55 @@ function layerTab() {
 	const layerTabArea = document.querySelectorAll('.tab-area.layer');
 
 	/* 탭 접근성 텍스트 세팅 */
+	const tabAccText = document.createTextNode(' 선택됨');
 	const tabAccTag = document.createElement('i');
-	tabAccTag.classList.add('sr-only', 'created');
-	tabAccTag.textContent = ' 선택됨';
+	tabAccTag.setAttribute('class', 'sr-only created');
+	tabAccTag.appendChild(tabAccText);
 
 	layerTabArea.forEach(e => {
-            const layerTabEle = e.querySelectorAll('.tab > ul > li');
-            const tabPanel = e.querySelectorAll('.tab-conts');
+		const layerTabEle = e.querySelectorAll('.tab > ul > li');
+		const tabPanel = e.querySelectorAll('.tab-conts');
 
-            function initializeTabs() {
-                layerTabEle.forEach(ele => {
-                    ele.classList.remove('active');
-                    ele.setAttribute('aria-selected', 'false');
-                    const text = ele.querySelector('.sr-only.created');
-                    if (text) ele.querySelector('button').removeChild(text);
-                });
-                tabPanel.forEach(ele => ele.classList.remove('active'));
-            }
+		function tab() {
+			layerTabEle.forEach(ele => {
+				const control = ele.getAttribute('aria-controls');
+				const selectedTabPanel = document.getElementById(control);
 
-            layerTabEle.forEach(ele => {
-                const control = ele.getAttribute('aria-controls');
-                const selectedTabPanel = document.getElementById(control);
+				if (ele.classList.contains('active')) {
+					//선택됨 텍스트 추가
+					ele.querySelector('button').append(tabAccTag);
+				}
 
-                if (ele.classList.contains('active')) {
-                    ele.querySelector('button').appendChild(tabAccTag);
-                }
+				ele.addEventListener('click', () => {
+					layerTabInitial(); //레이어탭 초기화
 
-                ele.addEventListener('click', () => {
-                    initializeTabs();
-                    ele.classList.add('active');
-                    ele.querySelector('button').appendChild(tabAccTag);
-                    ele.setAttribute('aria-selected', 'true');
-                    selectedTabPanel.classList.add('active');
-                });
-            });
-        });
-    }
+					ele.classList.add('active');
+					ele.querySelector('button').append(tabAccTag); //선택됨 텍스트 추가
+					ele.setAttribute('aria-selected', 'true');
+					selectedTabPanel.classList.add('active');
+				});
+			});
+		}
+
+		//레이어탭 초기화
+		function layerTabInitial() {
+			layerTabEle.forEach(ele => {
+				ele.classList.remove('active');
+				ele.setAttribute('aria-selected', 'false');
+				//ele.removeAttribute('style');
+				if (ele.classList.contains('active')) {
+					const text = ele.querySelector('.sr-only.created');
+					ele.querySelector('button').removeChild(text);
+				}
+			});
+			tabPanel.forEach(ele => {
+				ele.classList.remove('active');
+				//ele.removeAttribute('style');
+			})
+		}
+		tab();
+	});
+}
 
 /*** * DATEPICKER * ***/
 /* ** datepicker ** */
