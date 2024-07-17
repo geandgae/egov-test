@@ -435,3 +435,7 @@ switch (process.env.BUILD_ENV) {
 
 export default config;
 ```
+
+
+npm uninstall style-dictionary
+npm install style-dictionary@버전번호
